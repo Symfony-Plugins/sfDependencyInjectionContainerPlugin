@@ -44,6 +44,6 @@ EOF;
   {
     $sc = $this->configuration->getServiceContainer();
     $dumper = new sfServiceContainerDumperGraphviz($sc);
-    file_put_contents(sfConfig::get('sf_doc_dir').'/container.dot', $dumper->dump());
+    file_put_contents(sfConfig::get('sf_data_dir').'/container.dot', $dumper->dump());
   }
 }
