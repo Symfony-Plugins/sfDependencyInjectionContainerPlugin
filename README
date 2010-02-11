@@ -15,9 +15,29 @@ Installation
 
         $ symfony cache:clear
 
+  * Activate the plugin in the `config/ProjectConfiguration.class.php`:
+
+        [php]
+        class ProjectConfiguration extends sfProjectConfiguration
+        {
+          public function setup()
+          {
+            $this->enablePlugins(array(
+              /* ... */
+              'sfDependencyInjectionContainerPlugin',
+            ));
+          }
+        }
+
+>**NOTE**
+>This plugin must be enabled last to be able to register events and create services through the symfony event dispatcher.
+
+
+
+
 Documentation
 -------------
-  
+
 ### Bind your own services
 
 Thanks to the sfEventDispatcher bundled with Symfony, this plugin notify an event after the service container initialization.
